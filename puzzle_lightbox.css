@@ -1,0 +1,78 @@
+body.lightbox-open {
+  overflow: hidden;
+}
+
+.puzzle-lightbox {
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 3000;
+}
+
+.puzzle-lightbox.active {
+  display: block;
+}
+
+.puzzle-lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.82);
+  backdrop-filter: blur(6px);
+}
+
+.puzzle-lightbox-dialog {
+  position: relative;
+  z-index: 1;
+  max-width: min(92vw, 980px);
+  max-height: 90vh;
+  margin: 4vh auto;
+  background: rgba(12, 12, 29, 0.92);
+  border: 1px solid rgba(238, 118, 36, 0.24);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.45);
+}
+
+.puzzle-lightbox-image {
+  width: 100%;
+  max-height: 72vh;
+  object-fit: contain;
+  background: #050509;
+  display: block;
+}
+
+.puzzle-lightbox-caption {
+  padding: 1rem 1.25rem 1.25rem;
+}
+
+.puzzle-lightbox-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  margin-bottom: 0.35rem;
+}
+
+.puzzle-lightbox-pieces {
+  color: var(--accent-primary);
+  font-weight: 600;
+  margin: 0;
+}
+
+.puzzle-lightbox-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.45);
+  color: white;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.puzzle-lightbox-close:hover {
+  background: rgba(238, 118, 36, 0.85);
+}
