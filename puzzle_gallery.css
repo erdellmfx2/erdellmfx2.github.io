@@ -1,0 +1,58 @@
+.puzzle-gallery-card {
+  grid-column: 1 / -1;
+}
+
+.gallery-title {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  margin-bottom: 0.35rem;
+  color: var(--text-primary);
+}
+
+.gallery-subtitle {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.puzzle-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.puzzle-gallery-item {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: transform var(--transition-smooth), border-color var(--transition-smooth);
+}
+
+.puzzle-gallery-item:hover {
+  transform: translateY(-4px);
+  border-color: rgba(238,118,36,0.28);
+}
+
+.puzzle-gallery-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+}
+
+.puzzle-gallery-meta {
+  padding: 0.95rem 1rem 1.1rem;
+}
+
+.puzzle-gallery-meta h4 {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  margin-bottom: 0.35rem;
+  color: var(--text-primary);
+}
+
+.puzzle-gallery-meta p {
+  color: var(--accent-primary);
+  font-weight: 600;
+  margin: 0;
+}
