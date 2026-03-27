@@ -8,20 +8,22 @@
   --bg-card: rgba(15, 15, 35, 0.6);
   --bg-card-hover: rgba(20, 20, 50, 0.8);
   --border-glass: rgba(255, 255, 255, 0.06);
-  --border-glass-hover: rgba(240, 165, 0, 0.2);
+  --border-glass-hover: rgba(238, 118, 36, 0.22);
 
   --text-primary: #f0f0f5;
   --text-secondary: #a0a0b8;
   --text-muted: #6a6a80;
 
-  --accent-gold: #f0a500;
-  --accent-gold-light: #ffc746;
-  --accent-blue: #4fc3f7;
-  --accent-blue-dark: #0288d1;
+  --accent-primary: #ee7624;
+  --accent-secondary: #1b5633;
+  --accent-gold: #ee7624;
+  --accent-gold-light: #f39a57;
+  --accent-blue: #7fc7a0;
+  --accent-blue-dark: #1b5633;
   --accent-purple: #bb86fc;
 
-  --gradient-gold: linear-gradient(135deg, #f0a500, #ff6f00);
-  --gradient-blue: linear-gradient(135deg, #4fc3f7, #0288d1);
+  --gradient-gold: linear-gradient(135deg, #ee7624, #f39a57);
+  --gradient-blue: linear-gradient(135deg, #2b7a4b, #1b5633);
   --gradient-hero: linear-gradient(160deg, #06060f 0%, #0d0d25 40%, #0f0a20 100%);
 
   --font-heading: 'Outfit', sans-serif;
@@ -62,6 +64,10 @@ body {
   line-height: 1.7;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+}
+
+.subpage-main {
+  padding-top: 70px;
 }
 
 ::selection {
