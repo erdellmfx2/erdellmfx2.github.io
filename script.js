@@ -6,25 +6,44 @@
   let particles = [];
   let animFrame;
 
+  const palette = [
+    '238,118,36',   // Fang Orange
+    '27,86,51',     // Venom Green
+    '243,154,87',   // light orange accent
+    '127,199,160'   // soft green accent
+  ];
+
   function resize() {
     canvas.width = canvas.offsetWidth * devicePixelRatio;
     canvas.height = canvas.offsetHeight * devicePixelRatio;
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
     ctx.scale(devicePixelRatio, devicePixelRatio);
   }
 
   function createParticles() {
     particles = [];
-    const count = Math.min(80, Math.floor(canvas.offsetWidth / 15));
+    const count = Math.min(120, Math.floor(canvas.offsetWidth / 11));
     for (let i = 0; i < count; i++) {
       particles.push({
         x: Math.random() * canvas.offsetWidth,
         y: Math.random() * canvas.offsetHeight,
-        vx: (Math.random() - 0.5) * 0.3,
-        vy: (Math.random() - 0.5) * 0.3,
-        r: Math.random() * 1.5 + 0.5,
-        opacity: Math.random() * 0.4 + 0.1,
+        vx: (Math.random() - 0.5) * 0.45,
+        vy: (Math.random() - 0.5) * 0.45,
+        r: Math.random() * 2.4 + 0.8,
+        opacity: Math.random() * 0.5 + 0.22,
+        color: palette[Math.floor(Math.random() * palette.length)]
       });
     }
+  }
+
+  function drawGlow(x, y, r, color, opacity) {
+    const gradient = ctx.createRadialGradient(x, y, 0, x, y, r * 6);
+    gradient.addColorStop(0, `rgba(${color}, ${opacity * 0.35})`);
+    gradient.addColorStop(1, `rgba(${color}, 0)`);
+    ctx.beginPath();
+    ctx.fillStyle = gradient;
+    ctx.arc(x, y, r * 6, 0, Math.PI * 2);
+    ctx.fill();
   }
 
   function draw() {
@@ -36,10 +55,12 @@
         const dx = particles[i].x - particles[j].x;
         const dy = particles[i].y - particles[j].y;
         const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 120) {
+        if (dist < 135) {
+          const alpha = 0.13 * (1 - dist / 135);
+          const color = i % 2 === 0 ? '238,118,36' : '27,86,51';
           ctx.beginPath();
-          ctx.strokeStyle = `rgba(240, 165, 0, ${0.06 * (1 - dist / 120)})`;
-          ctx.lineWidth = 0.5;
+          ctx.strokeStyle = `rgba(${color}, ${alpha})`;
+          ctx.lineWidth = 0.8;
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
           ctx.stroke();
@@ -49,16 +70,15 @@
 
     // Draw particles
     particles.forEach(p => {
+      drawGlow(p.x, p.y, p.r, p.color, p.opacity);
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(240, 165, 0, ${p.opacity})`;
+      ctx.fillStyle = `rgba(${p.color}, ${p.opacity})`;
       ctx.fill();
 
-      // Move
       p.x += p.vx;
       p.y += p.vy;
 
-      // Wrap
       if (p.x < 0) p.x = canvas.offsetWidth;
       if (p.x > canvas.offsetWidth) p.x = 0;
       if (p.y < 0) p.y = canvas.offsetHeight;
@@ -135,18 +155,19 @@ updateActiveLink();
 const hamburger = document.getElementById('hamburger');
 const navLinksContainer = document.getElementById('navLinks');
 
-hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('active');
-  navLinksContainer.classList.toggle('active');
-});
-
-// Close menu on link click
-navLinksContainer.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    hamburger.classList.remove('active');
-    navLinksContainer.classList.remove('active');
+if (hamburger && navLinksContainer) {
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navLinksContainer.classList.toggle('active');
   });
-});
+
+  navLinksContainer.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      navLinksContainer.classList.remove('active');
+    });
+  });
+}
 
 /* ===== SMOOTH SCROLL ===== */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -154,7 +175,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     e.preventDefault();
     const target = document.querySelector(this.getAttribute('href'));
     if (target) {
-      const offset = 70; // navbar height
+      const offset = 70;
       const top = target.getBoundingClientRect().top + window.scrollY - offset;
       window.scrollTo({ top, behavior: 'smooth' });
     }
