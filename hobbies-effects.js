@@ -1,6 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const hobbiesSection = document.getElementById('hobbies');
+  const hobbiesSection = document.getElementById('hobbies') || document.getElementById('contact-effects') || document.querySelector('.hobbies-effect-host');
   if (!hobbiesSection) return;
+
+  const existing = hobbiesSection.querySelector('.hobbies-effect-layer');
+  if (existing) existing.remove();
 
   const effectLayer = document.createElement('div');
   effectLayer.className = 'hobbies-effect-layer';
