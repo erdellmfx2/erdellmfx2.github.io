@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Request a tutoring consultation with Tutoring Capital. Share your course, goals, and availability for math tutoring in Tallahassee and online.">
+  <title>Tutoring Capital | Tutoring Intake</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="nav-logo">Dr. Maurice</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="education-experience.html">Education & Experience</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="teaching-service.html">Teaching & Service</a></li>
+      <li><a href="credentials.html">Talks, Honors & Skills</a></li>
+      <li><a href="personal-contact.html">Hobbies</a></li>
+      <li><a href="tutoring.html">Tutoring</a></li>
+      <li><a href="contact-me.html">Contact Me</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </nav>
+
+  <main class="subpage-main">
+    <section class="section-pad hobbies-effect-host" id="tutoring-intake-page">
+      <div class="section-container form-shell">
+        <div class="section-header reveal" style="text-align: center; padding-top: 2rem;">
+          <span class="section-label">Tutoring Capital</span>
+          <h1 class="section-title">Request a free 15-minute tutoring consultation</h1>
+          <p class="section-subtitle">Share the student's course, biggest challenge, and scheduling preferences. This form prepares a structured message so it is easy to get the conversation started.</p>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="glass-card form-card reveal">
+          <form id="tutoring-intake-form">
+            <div class="form-grid">
+              <div class="form-field">
+                <label for="parentName">Parent or student name</label>
+                <input id="parentName" name="parentName" type="text" required placeholder="Your name">
+              </div>
+              <div class="form-field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" required placeholder="name@example.com">
+              </div>
+              <div class="form-field">
+                <label for="phone">Phone</label>
+                <input id="phone" name="phone" type="tel" placeholder="850-555-1234">
+              </div>
+              <div class="form-field">
+                <label for="studentLevel">Student level</label>
+                <select id="studentLevel" name="studentLevel" required>
+                  <option value="">Choose one</option>
+                  <option>Middle school</option>
+                  <option>High school</option>
+                  <option>College</option>
+                  <option>Adult learner</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="course">Course or subject</label>
+                <input id="course" name="course" type="text" required placeholder="Algebra I, Calculus, Statistics, SAT Math">
+              </div>
+              <div class="form-field">
+                <label for="format">Preferred format</label>
+                <select id="format" name="format">
+                  <option value="">Choose one</option>
+                  <option>Online</option>
+                  <option>In person in Tallahassee</option>
+                  <option>Open to either</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="goal">Main goal</label>
+              <textarea id="goal" name="goal" required placeholder="Improve grades, prepare for a test, rebuild foundations, strengthen confidence, or another goal"></textarea>
+            </div>
+
+            <div class="form-field">
+              <label for="details">Anything else Dr. Maurice should know?</label>
+              <textarea id="details" name="details" placeholder="Timeline, urgent test date, current struggle, availability, or other helpful details"></textarea>
+            </div>
+
+            <p class="helper-text">Submitting opens your email app with a pre-filled tutoring request. If your email app does not open, you can copy the prepared message from the preview area below.</p>
+
+            <div class="contact-links" style="justify-content: flex-start; margin-top: 1.25rem;">
+              <button type="submit" class="contact-btn" style="border: 0; cursor: pointer;">Prepare Email Request</button>
+              <a href="tel:8504434793" class="contact-btn"><span class="icon">📞</span> Call 850-443-4793</a>
+              <a href="tutoring.html" class="contact-btn"><span class="icon">📘</span> Back to Tutoring Page</a>
+            </div>
+            <p id="status-note" class="status-note" aria-live="polite"></p>
+          </form>
+        </div>
+
+        <div class="glass-card form-card reveal reveal-delay-1">
+          <h2 style="margin-bottom: 0.75rem;">Message preview</h2>
+          <p class="helper-text" style="margin-bottom: 1rem;">You can copy this message if your device does not automatically open an email window.</p>
+          <div class="form-field" style="margin-bottom: 0;">
+            <textarea id="message-preview" readonly></textarea>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>© 2026 Tutoring Capital</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    (function () {
+      const form = document.getElementById('tutoring-intake-form');
+      const preview = document.getElementById('message-preview');
+      const status = document.getElementById('status-note');
+
+      function buildMessage() {
+        const data = new FormData(form);
+        const lines = [
+          'Hello Dr. Maurice,',
+          '',
+          'I would like to request a tutoring consultation through Tutoring Capital.',
+          '',
+          'Parent or student name: ' + (data.get('parentName') || ''),
+          'Email: ' + (data.get('email') || ''),
+          'Phone: ' + (data.get('phone') || ''),
+          'Student level: ' + (data.get('studentLevel') || ''),
+          'Course or subject: ' + (data.get('course') || ''),
+          'Preferred format: ' + (data.get('format') || ''),
+          '',
+          'Main goal:',
+          (data.get('goal') || ''),
+          '',
+          'Additional details:',
+          (data.get('details') || ''),
+          '',
+          'Thank you.'
+        ];
+        return lines.join('\n');
+      }
+
+      function updatePreview() {
+        preview.value = buildMessage();
+      }
+
+      form.addEventListener('input', updatePreview);
+      updatePreview();
+
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        const subject = encodeURIComponent('Tutoring Capital Consultation Request');
+        const body = encodeURIComponent(buildMessage());
+        window.location.href = 'mailto:erdell.maurice@famu.edu?subject=' + subject + '&body=' + body;
+        status.textContent = 'Your email app should open with a prepared tutoring request. If it does not, copy the message preview and send it to erdell.maurice@famu.edu.';
+      });
+    })();
+  </script>
+</body>
+</html>
