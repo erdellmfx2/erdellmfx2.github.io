@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; frame-ancestors 'self'; upgrade-insecure-requests">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https://*.supabase.co; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; frame-ancestors 'self'; upgrade-insecure-requests">
   <meta name="description" content="Request a tutoring consultation with Tutoring Capital. Share your course, goals, and availability for math tutoring in Tallahassee and online.">
   <title>Tutoring Capital | Tutoring Intake</title>
   <link rel="stylesheet" href="index.css">
@@ -76,6 +76,11 @@
               </div>
             </div>
 
+            <div class="form-field honeypot-field" aria-hidden="true">
+              <label for="website">Leave this field blank</label>
+              <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+            </div>
+
             <div class="form-field">
               <label for="goal">Main goal</label>
               <textarea id="goal" name="goal" required placeholder="Improve grades, prepare for a test, rebuild foundations, strengthen confidence, or another goal"></textarea>
@@ -89,7 +94,7 @@
             <p class="helper-text">Submitting opens your email app with a pre-filled tutoring request. If your email app does not open, you can copy the prepared message from the preview area below.</p>
 
             <div class="contact-links" style="justify-content: flex-start; margin-top: 1.25rem;">
-              <button type="submit" class="contact-btn" style="border: 0; cursor: pointer;">Prepare Email Request</button>
+              <button type="submit" class="contact-btn" style="border: 0; cursor: pointer;">Send Tutoring Request</button>
               <a href="tel:8504434793" class="contact-btn"><span class="icon">📞</span> Call 850-443-4793</a>
               <a href="tutoring.html" class="contact-btn"><span class="icon">📘</span> Back to Tutoring Page</a>
             </div>
@@ -115,11 +120,25 @@
   </footer>
 
   <script src="script.js"></script>
+  <script src="supabase-config.js"></script>
   <script>
     (function () {
       const form = document.getElementById('tutoring-intake-form');
       const preview = document.getElementById('message-preview');
       const status = document.getElementById('status-note');
+      const submitButton = form.querySelector('button[type="submit"]');
+
+      function getSupabaseConfig() {
+        if (!window.TUTORING_CAPITAL_SUPABASE) return null;
+
+        const { url, anonKey } = window.TUTORING_CAPITAL_SUPABASE;
+        if (!url || !anonKey) return null;
+
+        return {
+          url: url.replace(/\/$/, ''),
+          anonKey
+        };
+      }
 
       function buildMessage() {
         const data = new FormData(form);
@@ -146,6 +165,45 @@
         return lines.join('\n');
       }
 
+      function buildPayload() {
+        const data = new FormData(form);
+        return {
+          parent_name: data.get('parentName') || '',
+          email: data.get('email') || '',
+          phone: data.get('phone') || '',
+          student_level: data.get('studentLevel') || '',
+          course: data.get('course') || '',
+          preferred_format: data.get('format') || '',
+          goal: data.get('goal') || '',
+          details: data.get('details') || '',
+          source: 'website',
+          honeypot: data.get('website') || ''
+        };
+      }
+
+      async function submitToSupabase(payload) {
+        const config = getSupabaseConfig();
+        if (!config) return { ok: false, fallback: true };
+
+        const response = await fetch(config.url + '/rest/v1/tutoring_inquiries', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            apikey: config.anonKey,
+            Authorization: 'Bearer ' + config.anonKey,
+            Prefer: 'return=minimal'
+          },
+          body: JSON.stringify(payload)
+        });
+
+        if (!response.ok) {
+          const errorText = await response.text();
+          throw new Error(errorText || 'Supabase insert failed');
+        }
+
+        return { ok: true };
+      }
+
       function updatePreview() {
         preview.value = buildMessage();
       }
@@ -153,12 +211,37 @@
       form.addEventListener('input', updatePreview);
       updatePreview();
 
-      form.addEventListener('submit', function (event) {
+      form.addEventListener('submit', async function (event) {
         event.preventDefault();
-        const subject = encodeURIComponent('Tutoring Capital Consultation Request');
-        const body = encodeURIComponent(buildMessage());
-        window.location.href = 'mailto:erdell.maurice@famu.edu?subject=' + subject + '&body=' + body;
-        status.textContent = 'Your email app should open with a prepared tutoring request. If it does not, copy the message preview and send it to erdell.maurice@famu.edu.';
+
+        const payload = buildPayload();
+        submitButton.disabled = true;
+          submitButton.textContent = 'Sending...';
+        status.textContent = '';
+
+        try {
+          const result = await submitToSupabase(payload);
+          const subject = encodeURIComponent('Tutoring Capital Consultation Request');
+          const body = encodeURIComponent(buildMessage());
+
+          if (result.fallback) {
+            window.location.href = 'mailto:erdell.maurice@famu.edu?subject=' + subject + '&body=' + body;
+            status.textContent = 'Supabase is not configured yet, so your email app should open with a prepared tutoring request. After you add your Supabase project details, this form will also save submissions to the database.';
+          } else {
+            form.reset();
+            updatePreview();
+            status.textContent = 'Your tutoring request was saved successfully. You can still email or call if you want to follow up right away.';
+          }
+        } catch (error) {
+          const subject = encodeURIComponent('Tutoring Capital Consultation Request');
+          const body = encodeURIComponent(buildMessage());
+          window.location.href = 'mailto:erdell.maurice@famu.edu?subject=' + subject + '&body=' + body;
+          status.textContent = 'The database submission did not complete, so your email app should open with the same request as a fallback.';
+          console.error(error);
+        } finally {
+          submitButton.disabled = false;
+          submitButton.textContent = 'Send Tutoring Request';
+        }
       });
     })();
   </script>

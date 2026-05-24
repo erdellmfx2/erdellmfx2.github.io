@@ -1004,6 +1004,14 @@ section:nth-child(even) .timeline-item::before {
   color: var(--text-muted);
 }
 
+.honeypot-field {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 .helper-text {
   color: var(--text-secondary);
   font-size: 0.95rem;
