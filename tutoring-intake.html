@@ -196,7 +196,6 @@
           headers: {
             'Content-Type': 'application/json',
             apikey: config.anonKey,
-            Authorization: 'Bearer ' + config.anonKey,
             Prefer: 'return=minimal'
           },
           body: JSON.stringify(payload)
@@ -204,7 +203,7 @@
 
         if (!response.ok) {
           const errorText = await response.text();
-          throw new Error(errorText || 'Supabase insert failed');
+          throw new Error('Supabase insert failed (' + response.status + '): ' + (errorText || 'No error body returned'));
         }
 
         return { ok: true };
@@ -241,8 +240,8 @@
         } catch (error) {
           const subject = encodeURIComponent('Tutoring Capital Consultation Request');
           const body = encodeURIComponent(buildMessage());
+          status.textContent = 'The database submission did not complete. Error: ' + error.message + ' You can use the email fallback if needed.';
           window.location.href = 'mailto:erdell.maurice@famu.edu?subject=' + subject + '&body=' + body;
-          status.textContent = 'The database submission did not complete, so your email app should open with the same request as a fallback.';
           console.error(error);
         } finally {
           submitButton.disabled = false;
