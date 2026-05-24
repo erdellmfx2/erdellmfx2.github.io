@@ -3,249 +3,738 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Expert Math Tutoring | Middle School, High School & College | Dr. Erdell Maurice</title>
-    
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Expert math tutoring by Dr. Erdell Maurice for Middle School, High School, and College students. Over 25 years of experience in Algebra, Calculus, and Data Science.">
-    <meta name="keywords" content="Math Tutor, Algebra Tutoring, Calculus Tutor, Middle School Math, High School Math, SAT Prep, ACT Prep, College Algebra, Dr. Erdell Maurice, Tallahassee Math Tutor, Online Math Tutor, Data Science Tutoring, Python Tutor">
+    <title>Math Tutoring with Dr. Erdell Maurice | Tallahassee & Online Tutoring</title>
+
+    <meta name="description" content="Personalized math tutoring with Dr. Erdell Maurice for middle school, high school, and college students. Build confidence, strengthen fundamentals, and get expert support in Algebra, Geometry, Calculus, Statistics, SAT/ACT Math, and more.">
+    <meta name="keywords" content="math tutor Tallahassee, online math tutor, algebra tutor, calculus tutor, SAT math tutor, ACT math tutor, college algebra tutor, statistics tutor, Dr. Erdell Maurice">
     <meta name="author" content="Dr. Erdell Maurice">
-    
-    <!-- Open Graph / Social Media Tags -->
-    <meta property="og:title" content="Expert Math Tutoring | Dr. Erdell Maurice">
-    <meta property="og:description" content="Build confidence and mastery in mathematics with personalized tutoring from a Ph.D. educator with over 25 years of experience.">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="Math Tutoring with Dr. Erdell Maurice">
+    <meta property="og:description" content="Supportive, high-level math tutoring for middle school, high school, and college students in Tallahassee and online.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://erdellmfx2.github.io/tutoring.html">
     <meta property="og:image" content="https://erdellmfx2.github.io/math-mastery-hero.jpg">
-    
-    <!-- Structured Data (JSON-LD) for Google -->
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "EducationalOrganization",
       "name": "Dr. Erdell Maurice Math Tutoring",
-      "description": "Expert mathematics tutoring for Middle School, High School, and Early College students.",
-      "email": "erdellmfx2@gmail.com",
       "url": "https://erdellmfx2.github.io/tutoring.html",
-      "logo": "https://erdellmfx2.github.io/math-mastery-hero.jpg",
+      "description": "Personalized mathematics tutoring for middle school, high school, and college students in Tallahassee and online.",
+      "telephone": "+1-850-443-4793",
+      "email": "erdell.maurice@famu.edu",
+      "image": "https://erdellmfx2.github.io/math-mastery-hero.jpg",
+      "areaServed": ["Tallahassee, Florida", "Online"],
+      "sameAs": [
+        "https://www.facebook.com/erdellmfx2",
+        "https://www.instagram.com/erdellmaurice/"
+      ],
       "founder": {
         "@type": "Person",
         "name": "Dr. Erdell Maurice",
         "jobTitle": "Mathematics Educator and Tutor",
-        "description": "Ph.D. in Mathematics Education with over 25 years of tutoring experience."
+        "alumniOf": ["Florida A&M University"],
+        "description": "Ph.D.-trained mathematics educator, university instructor, and tutor with over 25 years of tutoring experience."
       },
-      "knowsAbout": ["Pre-Algebra", "Algebra", "Geometry", "Calculus", "Statistics", "Data Science", "Python", "SAT Math Prep", "ACT Math Prep"]
+      "knowsAbout": [
+        "Pre-Algebra",
+        "Algebra I",
+        "Algebra II",
+        "Geometry",
+        "Trigonometry",
+        "Pre-Calculus",
+        "Calculus",
+        "College Algebra",
+        "Statistics",
+        "SAT Math",
+        "ACT Math",
+        "Python",
+        "Data Science"
+      ]
     }
     </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #2563eb;
-            --secondary-color: #1e40af;
-            --bg-color: #f8fafc;
-            --text-color: #334155;
-            --light-text: #64748b;
-            --white: #ffffff;
+            --bg: #f8fafc;
+            --surface: #ffffff;
+            --surface-alt: #eff6ff;
+            --text: #0f172a;
+            --muted: #475569;
+            --soft: #64748b;
+            --primary: #1d4ed8;
+            --primary-dark: #1e3a8a;
+            --accent: #0f766e;
+            --border: #dbeafe;
+            --shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+            --radius: 18px;
+            --max-width: 1160px;
         }
-        
+
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
+            background: linear-gradient(180deg, #f8fbff 0%, #f8fafc 35%, #ffffff 100%);
+            color: var(--text);
+            line-height: 1.7;
             -webkit-font-smoothing: antialiased;
         }
 
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 20px;
+        a {
+            color: inherit;
         }
 
-        /* Hero Section */
-        header {
-            background-color: var(--white);
-            padding: 80px 0;
-            text-align: center;
-            border-bottom: 1px solid #e2e8f0;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        .container {
+            width: min(var(--max-width), calc(100% - 2rem));
+            margin: 0 auto;
+        }
+
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.9);
+            border-bottom: 1px solid rgba(219, 234, 254, 0.9);
+        }
+
+        .topbar-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 0;
+        }
+
+        .brand {
+            font-weight: 800;
+            text-decoration: none;
+            color: var(--text);
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--muted);
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .nav-links a:hover,
+        .nav-links a:focus {
+            color: var(--primary);
+        }
+
+        .hero {
+            padding: 4.5rem 0 3rem;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            padding: 0.45rem 0.85rem;
+            border-radius: 999px;
+            background: #dbeafe;
+            color: var(--primary-dark);
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 1.25rem;
         }
 
         h1 {
-            font-size: 2.5rem;
-            color: #0f172a;
-            margin-bottom: 15px;
-            font-weight: 700;
+            font-size: clamp(2.2rem, 5vw, 4.3rem);
+            line-height: 1.05;
+            letter-spacing: -0.04em;
+            margin-bottom: 1rem;
         }
 
-        .subtitle {
-            font-size: 1.2rem;
-            color: var(--light-text);
-            max-width: 650px;
-            margin: 0 auto 30px;
+        .hero p.lead {
+            font-size: 1.12rem;
+            color: var(--muted);
+            max-width: 44rem;
+            margin-bottom: 1.5rem;
         }
 
-        .cta-button {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: var(--white);
-            padding: 12px 28px;
-            border-radius: 6px;
-            text-decoration: none;
+        .hero-points {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.85rem;
+            margin: 1.5rem 0 2rem;
+        }
+
+        .hero-point {
+            background: rgba(255,255,255,0.92);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 0.95rem 1rem;
+            color: var(--muted);
             font-weight: 600;
-            transition: background-color 0.3s ease;
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.06);
         }
 
-        .cta-button:hover {
-            background-color: var(--secondary-color);
+        .cta-row {
+            display: flex;
+            gap: 0.9rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
         }
 
-        /* Content Sections */
-        section {
-            padding: 60px 0;
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.95rem 1.35rem;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
         }
 
-        h2 {
-            font-size: 1.8rem;
-            color: #0f172a;
-            margin-bottom: 30px;
+        .btn:hover,
+        .btn:focus {
+            transform: translateY(-1px);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: #fff;
+            box-shadow: 0 16px 30px rgba(29, 78, 216, 0.22);
+        }
+
+        .btn-secondary {
+            background: #fff;
+            color: var(--primary-dark);
+            border: 1px solid var(--border);
+        }
+
+        .contact-note {
+            color: var(--soft);
+            font-size: 0.95rem;
+        }
+
+        .hero-card {
+            background: linear-gradient(180deg, #ffffff 0%, #eff6ff 100%);
+            border-radius: 24px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+        }
+
+        .hero-card img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .hero-card-content {
+            padding: 1.25rem;
+        }
+
+        .mini-stats {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .mini-stat {
+            background: rgba(255,255,255,0.88);
+            border: 1px solid #cfe0ff;
+            border-radius: 14px;
+            padding: 0.9rem;
             text-align: center;
         }
 
-        .grid {
+        .mini-stat strong {
+            display: block;
+            font-size: 1.1rem;
+            color: var(--primary-dark);
+        }
+
+        section {
+            padding: 1.5rem 0 4rem;
+        }
+
+        .section-header {
+            max-width: 760px;
+            margin: 0 auto 2rem;
+            text-align: center;
+        }
+
+        .section-header h2 {
+            font-size: clamp(1.8rem, 3vw, 2.6rem);
+            line-height: 1.1;
+            margin-bottom: 0.8rem;
+            letter-spacing: -0.03em;
+        }
+
+        .section-header p {
+            color: var(--muted);
+        }
+
+        .grid-3,
+        .grid-2,
+        .steps,
+        .faq-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 1.25rem;
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .steps {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
         }
 
         .card {
-            background-color: var(--white);
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            border: 1px solid #f1f5f9;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            box-shadow: 0 14px 30px rgba(15, 23, 42, 0.05);
         }
 
         .card h3 {
-            color: var(--primary-color);
-            margin-bottom: 15px;
-            font-size: 1.2rem;
+            margin-bottom: 0.7rem;
+            font-size: 1.15rem;
         }
 
-        /* About Section */
-        .about-section {
-            background-color: var(--white);
-            border-top: 1px solid #e2e8f0;
-            border-bottom: 1px solid #e2e8f0;
+        .card p,
+        .card li {
+            color: var(--muted);
         }
 
-        .about-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 40px 0;
-            color: var(--light-text);
-            font-size: 0.9rem;
+        .tag-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.55rem;
+            margin-top: 1rem;
         }
 
         .tag {
-            display: inline-block;
-            background: #e0e7ff;
-            color: var(--secondary-color);
-            padding: 4px 10px;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            margin: 4px 2px;
-            font-weight: 500;
+            display: inline-flex;
+            padding: 0.45rem 0.75rem;
+            border-radius: 999px;
+            background: #eff6ff;
+            color: var(--primary-dark);
+            border: 1px solid #cfe0ff;
+            font-weight: 600;
+            font-size: 0.92rem;
+        }
+
+        .accent-panel {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+            color: #fff;
+            border-radius: 28px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+        }
+
+        .accent-panel p,
+        .accent-panel li {
+            color: rgba(255,255,255,0.85);
+        }
+
+        .step-number {
+            width: 2.4rem;
+            height: 2.4rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 999px;
+            background: #dbeafe;
+            color: var(--primary-dark);
+            font-weight: 800;
+            margin-bottom: 0.9rem;
+        }
+
+        ul.clean {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+
+        ul.clean li::before {
+            content: "✓";
+            color: var(--accent);
+            font-weight: 800;
+            margin-right: 0.6rem;
+        }
+
+        .audience-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .audience-card::after {
+            content: "";
+            position: absolute;
+            inset: auto -30px -30px auto;
+            width: 110px;
+            height: 110px;
+            background: radial-gradient(circle, rgba(37,99,235,0.12), transparent 70%);
+        }
+
+        .faq-item h3 {
+            font-size: 1.05rem;
+            margin-bottom: 0.45rem;
+        }
+
+        .final-cta {
+            padding-bottom: 5rem;
+        }
+
+        .final-cta .accent-panel {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        footer {
+            border-top: 1px solid #e2e8f0;
+            padding: 2rem 0 3rem;
+            text-align: center;
+            color: var(--soft);
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 960px) {
+            .hero-grid,
+            .grid-3,
+            .grid-2,
+            .steps,
+            .final-cta .accent-panel {
+                grid-template-columns: 1fr;
+            }
+
+            .mini-stats,
+            .hero-points {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 720px) {
+            .topbar-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav-links {
+                justify-content: flex-start;
+            }
+
+            .hero {
+                padding-top: 3rem;
+            }
         }
     </style>
 </head>
 <body>
+    <div class="topbar">
+        <div class="container topbar-inner">
+            <a class="brand" href="index.html">Dr. Erdell Maurice</a>
+            <nav class="nav-links" aria-label="Tutoring page navigation">
+                <a href="#subjects">Subjects</a>
+                <a href="#approach">Approach</a>
+                <a href="#families">Why Families Choose Me</a>
+                <a href="#faq">FAQ</a>
+                <a href="contact-me.html">Contact</a>
+            </nav>
+        </div>
+    </div>
 
-    <header>
-        <div class="container">
-            <h1>Expert Math Tutoring</h1>
-            <p class="subtitle">Building confidence and mastery in mathematics for Middle School, High School, and Early College students. Backed by over 25 years of tutoring experience.</p>
-            <a href="mailto:erdellmfx2@gmail.com" class="cta-button">Book a Session</a>
-            <div style="margin-top: 50px;">
-                <img src="math-mastery-hero.jpg" alt="Mathematical Mastery and Growth" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);">
+    <header class="hero">
+        <div class="container hero-grid">
+            <div>
+                <div class="eyebrow">Tallahassee + Online Math Tutoring</div>
+                <h1>Math tutoring that builds confidence, clarity, and real momentum</h1>
+                <p class="lead">If your student feels stuck, behind, overwhelmed, or ready to move ahead, I provide calm, personalized math instruction that turns confusion into understanding. I work with middle school, high school, and college students who need strong explanations, a clear plan, and expert support.</p>
+
+                <div class="hero-points">
+                    <div class="hero-point">Ph.D.-trained mathematics educator</div>
+                    <div class="hero-point">25+ years of tutoring experience</div>
+                    <div class="hero-point">Middle school through college support</div>
+                    <div class="hero-point">Available for local and online sessions</div>
+                </div>
+
+                <div class="cta-row">
+                    <a href="mailto:erdell.maurice@famu.edu?subject=Math%20Tutoring%20Inquiry" class="btn btn-primary">Schedule a Consultation</a>
+                    <a href="tel:8504434793" class="btn btn-secondary">Call 850-443-4793</a>
+                </div>
+                <p class="contact-note">Prefer email? Write to erdell.maurice@famu.edu. You can also visit the full <a href="contact-me.html">contact page</a>.</p>
+            </div>
+
+            <div class="hero-card">
+                <img src="math-mastery-hero.jpg" alt="Illustration representing growth, mastery, and success in mathematics">
+                <div class="hero-card-content">
+                    <strong style="display:block; font-size:1.05rem; margin-bottom:0.45rem;">What students and families often need most</strong>
+                    <p style="color: var(--muted);">A tutor who can explain difficult ideas clearly, diagnose learning gaps, and help students rebuild confidence one step at a time.</p>
+                    <div class="mini-stats">
+                        <div class="mini-stat"><strong>Algebra to Calculus</strong><span>Core math support</span></div>
+                        <div class="mini-stat"><strong>SAT/ACT Math</strong><span>Targeted test prep</span></div>
+                        <div class="mini-stat"><strong>College Readiness</strong><span>Stronger foundations</span></div>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
 
-    <section class="container">
-        <h2>Areas of Expertise</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Middle & High School Math</h3>
-                <p>Clear, patient instruction designed to build a strong foundation, boost confidence, and improve grades in core classes.</p>
-                <div style="margin-top: 15px;">
-                    <span class="tag">Pre-Algebra</span>
-                    <span class="tag">Algebra I & II</span>
-                    <span class="tag">Geometry</span>
-                    <span class="tag">Pre-Calculus</span>
-                </div>
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <h2>Who this tutoring is for</h2>
+                <p>I support students at different stages of their math journey, whether the goal is catching up, staying on track, or reaching higher levels of performance.</p>
             </div>
-            <div class="card">
-                <h3>Early College & Test Prep</h3>
-                <p>Expert guidance to help students successfully navigate standardized tests and introductory college mathematics.</p>
-                <div style="margin-top: 15px;">
-                    <span class="tag">College Algebra</span>
-                    <span class="tag">Intro Statistics</span>
-                    <span class="tag">Trigonometry</span>
-                    <span class="tag">SAT/ACT Math</span>
+            <div class="grid-3">
+                <div class="card audience-card">
+                    <h3>Middle school students</h3>
+                    <p>Build a strong foundation early with patient instruction in number sense, problem solving, pre-algebra, and early algebra concepts.</p>
                 </div>
-            </div>
-            <div class="card">
-                <h3>Advanced Pathways</h3>
-                <p>For students ready to go further, I offer enrichment in advanced math, programming, and data science fundamentals.</p>
-                <div style="margin-top: 15px;">
-                    <span class="tag">Calculus</span>
-                    <span class="tag">Intro to Python</span>
-                    <span class="tag">Data Science</span>
+                <div class="card audience-card">
+                    <h3>High school students</h3>
+                    <p>Get structured support in Algebra I and II, Geometry, Trigonometry, Pre-Calculus, Calculus, and standardized test preparation.</p>
+                </div>
+                <div class="card audience-card">
+                    <h3>College students</h3>
+                    <p>Strengthen understanding in College Algebra, introductory Statistics, and foundational mathematics needed for persistence and success.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="about-section">
-        <div class="container" style="padding-top: 60px; padding-bottom: 60px;">
-            <div class="about-content">
-                <h2>About Dr. Erdell Maurice</h2>
-                <p style="margin-bottom: 20px;">
-                    I hold a Ph.D. in Mathematics Education and bring over 25 years of dedicated tutoring experience to every session. With additional degrees in Mathematics and Actuarial Science, my approach combines deep subject knowledge with proven teaching strategies.
-                </p>
-                <p>
-                    Whether your student is struggling to grasp middle school fundamentals or preparing for rigorous college coursework, I provide highly effective, personalized instruction. My goal is to transform math from a source of frustration into a subject of confidence and success.
-                </p>
+    <section id="subjects">
+        <div class="container">
+            <div class="section-header">
+                <h2>Subjects and support areas</h2>
+                <p>Sessions are tailored to the student’s course, current struggles, and academic goals.</p>
+            </div>
+            <div class="grid-3">
+                <div class="card">
+                    <h3>Core school mathematics</h3>
+                    <p>Clear explanations, worked examples, guided practice, and gap-filling support in the courses where students most often lose confidence.</p>
+                    <div class="tag-row">
+                        <span class="tag">Pre-Algebra</span>
+                        <span class="tag">Algebra I</span>
+                        <span class="tag">Algebra II</span>
+                        <span class="tag">Geometry</span>
+                        <span class="tag">Pre-Calculus</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>College and advanced preparation</h3>
+                    <p>Thoughtful support for students transitioning into more abstract mathematics and quantitative coursework.</p>
+                    <div class="tag-row">
+                        <span class="tag">College Algebra</span>
+                        <span class="tag">Trigonometry</span>
+                        <span class="tag">Calculus</span>
+                        <span class="tag">Statistics</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>Targeted academic goals</h3>
+                    <p>Focused tutoring for exams, homework systems, study habits, confidence rebuilding, and quantitative readiness.</p>
+                    <div class="tag-row">
+                        <span class="tag">SAT Math</span>
+                        <span class="tag">ACT Math</span>
+                        <span class="tag">Study Skills</span>
+                        <span class="tag">Confidence Building</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="container" style="text-align: center;">
-        <h2>Ready to see improvement?</h2>
-        <p style="color: var(--light-text); margin-bottom: 25px;">Let's build a customized learning plan that fits your student's goals.</p>
-        <a href="mailto:erdellmfx2@gmail.com" class="cta-button" style="background-color: #0f172a;">Contact Me to Get Started</a>
+    <section id="approach">
+        <div class="container">
+            <div class="section-header">
+                <h2>A tutoring approach built around understanding, not just answers</h2>
+                <p>Students make the best progress when instruction is personalized, encouraging, and grounded in how they actually learn.</p>
+            </div>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>What happens in a session</h3>
+                    <ul class="clean">
+                        <li>We identify the exact point where confusion begins.</li>
+                        <li>We break concepts into clear, manageable steps.</li>
+                        <li>We practice with guidance until the method becomes understandable and repeatable.</li>
+                        <li>We connect new topics to prior knowledge so learning sticks.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>What students gain over time</h3>
+                    <ul class="clean">
+                        <li>Stronger mathematical reasoning and problem-solving habits</li>
+                        <li>More confidence asking questions and attempting difficult work</li>
+                        <li>Better preparation for quizzes, tests, and future courses</li>
+                        <li>A learning plan that addresses both immediate needs and long-term growth</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container accent-panel">
+            <div class="section-header" style="margin-bottom: 1.5rem; text-align:left; max-width:none;">
+                <h2 style="margin-bottom:0.6rem;">Need a tutor who can meet students where they are?</h2>
+                <p>Some students need remediation. Others need challenge. Many need both structure and encouragement. My role is to understand what is blocking progress and then guide the student forward with clarity and consistency.</p>
+            </div>
+            <div class="steps">
+                <div>
+                    <div class="step-number">1</div>
+                    <h3>Assess the need</h3>
+                    <p>We start by identifying the class, topic, current difficulty, and learning goals.</p>
+                </div>
+                <div>
+                    <div class="step-number">2</div>
+                    <h3>Create a plan</h3>
+                    <p>We focus on the most important concepts first so sessions produce visible academic momentum.</p>
+                </div>
+                <div>
+                    <div class="step-number">3</div>
+                    <h3>Build confidence</h3>
+                    <p>Students learn how to think through problems with less anxiety and more independence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="families">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why families choose Dr. Erdell Maurice</h2>
+                <p>This page is designed for families and students looking for more than quick homework help. The goal is durable understanding.</p>
+            </div>
+            <div class="grid-3">
+                <div class="card">
+                    <h3>Deep academic background</h3>
+                    <p>Dr. Maurice brings advanced training in mathematics education, mathematics, and actuarial science, along with university-level teaching experience.</p>
+                </div>
+                <div class="card">
+                    <h3>Personalized instruction</h3>
+                    <p>No two students learn the same way. Sessions are adapted to the learner’s pace, strengths, and current level of readiness.</p>
+                </div>
+                <div class="card">
+                    <h3>Supportive and structured</h3>
+                    <p>Students receive clear explanations, patient guidance, and a process that reduces frustration instead of increasing it.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <h2>Common reasons students reach out</h2>
+                <p>If any of these sound familiar, tutoring may help sooner than waiting for the next test score.</p>
+            </div>
+            <div class="grid-2">
+                <div class="card">
+                    <ul class="clean">
+                        <li>"My child understands in class, but freezes when working alone."</li>
+                        <li>"We need help rebuilding algebra foundations."</li>
+                        <li>"Test scores do not reflect the effort being put in."</li>
+                        <li>"Math confidence has dropped and frustration is rising."</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <ul class="clean">
+                        <li>"A college math course is moving too quickly."</li>
+                        <li>"We want stronger SAT or ACT math preparation."</li>
+                        <li>"The student is capable, but needs better structure and accountability."</li>
+                        <li>"We want support from someone who truly understands math education."</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently asked questions</h2>
+                <p>Clear answers help families decide whether the fit is right.</p>
+            </div>
+            <div class="faq-grid grid-2">
+                <div class="card faq-item">
+                    <h3>Do you work with students online?</h3>
+                    <p>Yes. Online tutoring is available for students who prefer remote sessions or live outside the Tallahassee area.</p>
+                </div>
+                <div class="card faq-item">
+                    <h3>What age groups do you support?</h3>
+                    <p>I work with middle school, high school, and college students, with instruction adjusted to the student’s level and goals.</p>
+                </div>
+                <div class="card faq-item">
+                    <h3>What if a student is far behind?</h3>
+                    <p>That is often exactly when tutoring is most valuable. We identify learning gaps, rebuild the missing foundations, and create a path back to confidence.</p>
+                </div>
+                <div class="card faq-item">
+                    <h3>How do we get started?</h3>
+                    <p>Reach out by email or phone with the student’s grade level, course, and main challenge. From there, we can discuss goals and next steps.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="final-cta">
+        <div class="container">
+            <div class="accent-panel">
+                <div>
+                    <h2 style="font-size: clamp(1.8rem, 3vw, 2.8rem); line-height:1.1; margin-bottom:0.75rem;">Ready to help your student feel stronger in math?</h2>
+                    <p>Whether the need is immediate course support, standardized test preparation, or long-term confidence building, the next step is simple: reach out and share what your student is facing.</p>
+                </div>
+                <div>
+                    <div class="cta-row" style="margin-bottom:0.9rem;">
+                        <a href="mailto:erdell.maurice@famu.edu?subject=Math%20Tutoring%20Inquiry&body=Hello%20Dr.%20Maurice%2C%0A%0AI%20am%20interested%20in%20math%20tutoring.%0AStudent%20grade%20level%3A%0ACourse%20or%20topic%3A%0ABiggest%20challenge%20right%20now%3A%0A%0AThank%20you." class="btn btn-primary">Email Dr. Maurice</a>
+                        <a href="contact-me.html" class="btn btn-secondary">Visit Contact Page</a>
+                    </div>
+                    <p style="color: rgba(255,255,255,0.82);">Phone: <a href="tel:8504434793">850-443-4793</a><br>Email: <a href="mailto:erdell.maurice@famu.edu">erdell.maurice@famu.edu</a></p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 Dr. Erdell Maurice. All rights reserved.</p>
+            <p>© 2026 Dr. Erdell Maurice. Personalized math tutoring for students in Tallahassee and online.</p>
         </div>
     </footer>
-
 </body>
 </html>
