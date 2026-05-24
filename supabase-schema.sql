@@ -12,7 +12,7 @@ create table if not exists public.tutoring_inquiries (
     preferred_format is null or
     preferred_format in ('Online', 'In person in Tallahassee', 'Open to either')
   ),
-  goal text not null check (char_length(goal) between 10 and 2000),
+  goal text not null check (char_length(goal) between 3 and 2000),
   details text,
   source text not null default 'website' check (source in ('website', 'manual')),
   status text not null default 'new' check (status in ('new', 'contacted', 'scheduled', 'active', 'closed')),

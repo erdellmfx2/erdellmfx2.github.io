@@ -19,6 +19,17 @@ This creates:
 - Row Level Security
 - an `anon` insert policy for the website
 
+If you already ran an older version of the schema, update the goal constraint with:
+
+```sql
+alter table public.tutoring_inquiries
+drop constraint if exists tutoring_inquiries_goal_check;
+
+alter table public.tutoring_inquiries
+add constraint tutoring_inquiries_goal_check
+check (char_length(goal) between 3 and 2000);
+```
+
 ## 3. Get your project URL and anon key
 
 1. Open `Project Settings`.
