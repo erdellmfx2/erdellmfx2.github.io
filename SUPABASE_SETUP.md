@@ -30,6 +30,27 @@ add constraint tutoring_inquiries_goal_check
 check (char_length(goal) between 3 and 2000);
 ```
 
+To allow either email or phone instead of requiring email, also run:
+
+```sql
+alter table public.tutoring_inquiries
+alter column email drop not null;
+
+alter table public.tutoring_inquiries
+drop constraint if exists tutoring_inquiries_email_check;
+
+alter table public.tutoring_inquiries
+add constraint tutoring_inquiries_email_check
+check (email is null or char_length(email) between 5 and 320);
+
+alter table public.tutoring_inquiries
+drop constraint if exists tutoring_inquiries_email_or_phone_check;
+
+alter table public.tutoring_inquiries
+add constraint tutoring_inquiries_email_or_phone_check
+check (email is not null or phone is not null);
+```
+
 ## 3. Get your project URL and anon key
 
 1. Open `Project Settings`.

@@ -45,7 +45,7 @@
               </div>
               <div class="form-field">
                 <label for="email">Email</label>
-                <input id="email" name="email" type="email" required placeholder="name@example.com">
+                <input id="email" name="email" type="email" placeholder="name@example.com">
               </div>
               <div class="form-field">
                 <label for="phone">Phone</label>
@@ -91,7 +91,7 @@
               <textarea id="details" name="details" placeholder="Timeline, urgent test date, current struggle, availability, or other helpful details"></textarea>
             </div>
 
-            <p class="helper-text">Submitting opens your email app with a pre-filled tutoring request. If your email app does not open, you can copy the prepared message from the preview area below.</p>
+            <p class="helper-text">Please provide at least one contact method: email or phone. Submitting opens your email app with a pre-filled tutoring request if the database save is unavailable.</p>
 
             <div class="contact-links" style="justify-content: flex-start; margin-top: 1.25rem;">
               <button type="submit" class="contact-btn" style="border: 0; cursor: pointer;">Send Tutoring Request</button>
@@ -213,6 +213,10 @@
         preview.value = buildMessage();
       }
 
+      function hasContactMethod(payload) {
+        return Boolean(payload.email || payload.phone);
+      }
+
       form.addEventListener('input', updatePreview);
       updatePreview();
 
@@ -220,6 +224,10 @@
         event.preventDefault();
 
         const payload = buildPayload();
+        if (!hasContactMethod(payload)) {
+          status.textContent = 'Please provide at least an email address or a phone number before submitting.';
+          return;
+        }
         submitButton.disabled = true;
           submitButton.textContent = 'Sending...';
         status.textContent = '';

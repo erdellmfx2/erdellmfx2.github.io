@@ -4,7 +4,7 @@ create table if not exists public.tutoring_inquiries (
   id uuid primary key default gen_random_uuid(),
   created_at timestamptz not null default timezone('utc', now()),
   parent_name text not null check (char_length(parent_name) between 2 and 120),
-  email text not null check (char_length(email) between 5 and 320),
+  email text check (email is null or char_length(email) between 5 and 320),
   phone text,
   student_level text not null check (student_level in ('Middle school', 'High school', 'College', 'Adult learner')),
   course text not null check (char_length(course) between 2 and 160),
@@ -16,7 +16,8 @@ create table if not exists public.tutoring_inquiries (
   details text,
   source text not null default 'website' check (source in ('website', 'manual')),
   status text not null default 'new' check (status in ('new', 'contacted', 'scheduled', 'active', 'closed')),
-  honeypot text not null default ''
+  honeypot text not null default '',
+  check (email is not null or phone is not null)
 );
 
 alter table public.tutoring_inquiries enable row level security;
