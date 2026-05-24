@@ -140,6 +140,12 @@
         };
       }
 
+      function optionalValue(value) {
+        if (typeof value !== 'string') return value;
+        const trimmed = value.trim();
+        return trimmed === '' ? null : trimmed;
+      }
+
       function buildMessage() {
         const data = new FormData(form);
         const lines = [
@@ -168,16 +174,16 @@
       function buildPayload() {
         const data = new FormData(form);
         return {
-          parent_name: data.get('parentName') || '',
-          email: data.get('email') || '',
-          phone: data.get('phone') || '',
-          student_level: data.get('studentLevel') || '',
-          course: data.get('course') || '',
-          preferred_format: data.get('format') || '',
-          goal: data.get('goal') || '',
-          details: data.get('details') || '',
+          parent_name: (data.get('parentName') || '').trim(),
+          email: (data.get('email') || '').trim(),
+          phone: optionalValue(data.get('phone')),
+          student_level: (data.get('studentLevel') || '').trim(),
+          course: (data.get('course') || '').trim(),
+          preferred_format: optionalValue(data.get('format')),
+          goal: (data.get('goal') || '').trim(),
+          details: optionalValue(data.get('details')),
           source: 'website',
-          honeypot: data.get('website') || ''
+          honeypot: (data.get('website') || '').trim()
         };
       }
 
