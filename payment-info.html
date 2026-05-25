@@ -159,6 +159,60 @@
         .card li {
             color: var(--muted);
         }
+        .payment-card {
+            position: relative;
+            overflow: hidden;
+        }
+        .payment-card::after {
+            content: "";
+            position: absolute;
+            inset: auto -30px -30px auto;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(37,99,235,0.08), transparent 70%);
+        }
+        .payment-badge {
+            width: 3.25rem;
+            height: 3.25rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 16px;
+            font-size: 1.1rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+        }
+        .payment-badge.cashapp {
+            background: linear-gradient(135deg, #22c55e, #15803d);
+            color: #ffffff;
+        }
+        .payment-badge.zelle {
+            background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+            color: #ffffff;
+        }
+        .payment-title-row {
+            display: flex;
+            align-items: center;
+            gap: 0.9rem;
+            margin-bottom: 0.4rem;
+        }
+        .payment-title-row h2 {
+            margin-bottom: 0;
+        }
+        .payment-label {
+            display: inline-flex;
+            margin-top: 0.35rem;
+            padding: 0.25rem 0.65rem;
+            border-radius: 999px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            background: #eef2ff;
+            color: #4338ca;
+        }
         .payment-handle {
             display: inline-block;
             margin: 1rem 0 0.4rem;
@@ -170,6 +224,17 @@
             font-size: 1.15rem;
             font-weight: 800;
             word-break: break-word;
+        }
+        .payment-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+        .helper-text {
+            margin-top: 0.8rem;
+            font-size: 0.95rem;
+            color: var(--soft);
         }
         .section-header {
             max-width: 720px;
@@ -252,20 +317,40 @@
         <div class="container">
             <div class="section-header">
                 <h2>Accepted forms of payment</h2>
-                <p>Use either option below when paying for tutoring services.</p>
+                <p>Use either option below when paying for tutoring services. The visuals below are custom website graphics, not official platform logos.</p>
             </div>
             <div class="grid-2">
-                <div class="card">
-                    <h2>Cash App</h2>
+                <div class="card payment-card">
+                    <div class="payment-title-row">
+                        <div class="payment-badge cashapp" aria-hidden="true">$</div>
+                        <div>
+                            <h2>Cash App</h2>
+                            <div class="payment-label">Fast mobile payment</div>
+                        </div>
+                    </div>
                     <p>Send payment directly through Cash App using this handle:</p>
                     <div class="payment-handle">$Erdellmfx2</div>
-                    <p>Please make sure the handle matches exactly before sending.</p>
+                    <div class="payment-actions">
+                        <a href="https://cash.app/$Erdellmfx2" class="btn btn-primary">Open Cash App</a>
+                        <button type="button" class="btn btn-secondary" onclick="copyPaymentInfo('$Erdellmfx2', 'Cash App handle copied.')">Copy Cash App</button>
+                    </div>
+                    <p class="helper-text">This page uses a custom button style instead of official Cash App brand assets. On many phones, the link will open the app directly if it is installed.</p>
                 </div>
-                <div class="card">
-                    <h2>Zelle</h2>
+                <div class="card payment-card">
+                    <div class="payment-title-row">
+                        <div class="payment-badge zelle" aria-hidden="true">Z</div>
+                        <div>
+                            <h2>Zelle</h2>
+                            <div class="payment-label">Bank app payment</div>
+                        </div>
+                    </div>
                     <p>Send payment through Zelle using this email address:</p>
                     <div class="payment-handle">erdellmfx2@gmail.com</div>
-                    <p>Please confirm the recipient details before completing your payment.</p>
+                    <div class="payment-actions">
+                        <a href="https://www.zellepay.com/get-started" class="btn btn-primary">Open Zelle</a>
+                        <button type="button" class="btn btn-secondary" onclick="copyPaymentInfo('erdellmfx2@gmail.com', 'Zelle email copied.')">Copy Zelle Email</button>
+                    </div>
+                    <p class="helper-text">This page uses a custom Zelle-style card instead of official Zelle logos. Visitors can open Zelle's get-started page, then paste your email into their banking app or Zelle flow.</p>
                 </div>
             </div>
         </div>
@@ -290,5 +375,21 @@
             <p>© 2026 Dr. Erdell Maurice. Payment details for tutoring services in Tallahassee and online.</p>
         </div>
     </footer>
+
+    <script>
+        function copyPaymentInfo(value, successMessage) {
+            if (!navigator.clipboard) {
+                window.prompt('Copy this information:', value);
+                return;
+            }
+            navigator.clipboard.writeText(value)
+                .then(function () {
+                    window.alert(successMessage);
+                })
+                .catch(function () {
+                    window.prompt('Copy this information:', value);
+                });
+        }
+    </script>
 </body>
 </html>
