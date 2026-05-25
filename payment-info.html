@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Information | Dr. Erdell Maurice Tutoring</title>
+    <meta name="description" content="Payment information for Dr. Erdell Maurice tutoring services. Pay by Cash App or Zelle.">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Tutoring Payment Information | Dr. Erdell Maurice">
+    <meta property="og:description" content="Cash App and Zelle payment details for math tutoring with Dr. Erdell Maurice.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://erdellmfx2.github.io/payment-info.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #f8fafc;
+            --surface: #ffffff;
+            --surface-alt: #eff6ff;
+            --text: #0f172a;
+            --muted: #475569;
+            --soft: #64748b;
+            --primary: #1d4ed8;
+            --primary-dark: #1e3a8a;
+            --accent: #0f766e;
+            --border: #dbeafe;
+            --shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+            --radius: 18px;
+            --max-width: 980px;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(180deg, #f8fbff 0%, #f8fafc 35%, #ffffff 100%);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        a { color: inherit; }
+        .container {
+            width: min(var(--max-width), calc(100% - 2rem));
+            margin: 0 auto;
+        }
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.9);
+            border-bottom: 1px solid rgba(219, 234, 254, 0.9);
+        }
+        .topbar-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 0;
+        }
+        .brand {
+            font-weight: 800;
+            text-decoration: none;
+            color: var(--text);
+            letter-spacing: -0.02em;
+        }
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--muted);
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+        .nav-links a:hover,
+        .nav-links a:focus,
+        .nav-links a.active {
+            color: var(--primary);
+        }
+        .hero {
+            padding: 4.5rem 0 2rem;
+        }
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            padding: 0.45rem 0.85rem;
+            border-radius: 999px;
+            background: #dbeafe;
+            color: var(--primary-dark);
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+        }
+        h1 {
+            font-size: clamp(2.2rem, 5vw, 4rem);
+            line-height: 1.05;
+            letter-spacing: -0.04em;
+            margin-bottom: 1rem;
+        }
+        .lead {
+            font-size: 1.08rem;
+            color: var(--muted);
+            max-width: 42rem;
+            margin-bottom: 1.5rem;
+        }
+        .cta-row {
+            display: flex;
+            gap: 0.9rem;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.95rem 1.35rem;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+        }
+        .btn:hover,
+        .btn:focus { transform: translateY(-1px); }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: #fff;
+            box-shadow: 0 16px 30px rgba(29, 78, 216, 0.22);
+        }
+        .btn-secondary {
+            background: #fff;
+            color: var(--primary-dark);
+            border: 1px solid var(--border);
+        }
+        section {
+            padding: 1.5rem 0 4rem;
+        }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1.25rem;
+        }
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.6rem;
+            box-shadow: 0 14px 30px rgba(15, 23, 42, 0.05);
+        }
+        .card h2 {
+            margin-bottom: 0.7rem;
+            font-size: 1.35rem;
+        }
+        .card p,
+        .card li {
+            color: var(--muted);
+        }
+        .payment-handle {
+            display: inline-block;
+            margin: 1rem 0 0.4rem;
+            padding: 0.85rem 1rem;
+            border-radius: 14px;
+            background: var(--surface-alt);
+            color: var(--primary-dark);
+            border: 1px solid #cfe0ff;
+            font-size: 1.15rem;
+            font-weight: 800;
+            word-break: break-word;
+        }
+        .section-header {
+            max-width: 720px;
+            margin: 0 auto 2rem;
+            text-align: center;
+        }
+        .section-header h2 {
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            line-height: 1.1;
+            margin-bottom: 0.8rem;
+            letter-spacing: -0.03em;
+        }
+        .section-header p { color: var(--muted); }
+        .notes {
+            display: grid;
+            gap: 0.8rem;
+            margin-top: 1rem;
+            padding-left: 1.25rem;
+        }
+        .accent-panel {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+            color: #fff;
+            border-radius: 28px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+        }
+        .accent-panel p,
+        .accent-panel li {
+            color: rgba(255,255,255,0.85);
+        }
+        footer {
+            border-top: 1px solid #e2e8f0;
+            padding: 2rem 0 3rem;
+            text-align: center;
+            color: var(--soft);
+            font-size: 0.95rem;
+        }
+        @media (max-width: 780px) {
+            .topbar-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .nav-links {
+                justify-content: flex-start;
+            }
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+            .hero {
+                padding-top: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="topbar">
+        <div class="container topbar-inner">
+            <a class="brand" href="index.html">Dr. Erdell Maurice</a>
+            <nav class="nav-links" aria-label="Payment page navigation">
+                <a href="tutoring.html">Tutoring</a>
+                <a href="payment-info.html" class="active">Payment Info</a>
+                <a href="contact-me.html">Contact</a>
+            </nav>
+        </div>
+    </div>
+
+    <header class="hero">
+        <div class="container">
+            <div class="eyebrow">Tutoring Payment Options</div>
+            <h1>Payment information for tutoring sessions</h1>
+            <p class="lead">Thank you for choosing Dr. Erdell Maurice for math tutoring. Payments can be sent using Cash App or Zelle. If you have any questions before sending payment, please reach out using the contact page.</p>
+            <div class="cta-row">
+                <a href="tutoring.html" class="btn btn-primary">Back to Tutoring Page</a>
+                <a href="contact-me.html" class="btn btn-secondary">Contact Dr. Maurice</a>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <h2>Accepted forms of payment</h2>
+                <p>Use either option below when paying for tutoring services.</p>
+            </div>
+            <div class="grid-2">
+                <div class="card">
+                    <h2>Cash App</h2>
+                    <p>Send payment directly through Cash App using this handle:</p>
+                    <div class="payment-handle">$Erdellmfx2</div>
+                    <p>Please make sure the handle matches exactly before sending.</p>
+                </div>
+                <div class="card">
+                    <h2>Zelle</h2>
+                    <p>Send payment through Zelle using this email address:</p>
+                    <div class="payment-handle">erdellmfx2@gmail.com</div>
+                    <p>Please confirm the recipient details before completing your payment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container accent-panel">
+            <div class="section-header" style="margin-bottom: 1.5rem; text-align:left; max-width:none;">
+                <h2 style="margin-bottom:0.6rem;">Helpful payment note</h2>
+                <p>After sending payment, you can follow up by email or phone if you would like to confirm that it was received.</p>
+            </div>
+            <ul class="notes">
+                <li>Phone: <a href="tel:8504434793">850-443-4793</a></li>
+                <li>Email: <a href="mailto:erdell.maurice@famu.edu">erdell.maurice@famu.edu</a></li>
+                <li>Tutoring page: <a href="tutoring.html">erdellmfx2.github.io/tutoring.html</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Dr. Erdell Maurice. Payment details for tutoring services in Tallahassee and online.</p>
+        </div>
+    </footer>
+</body>
+</html>
