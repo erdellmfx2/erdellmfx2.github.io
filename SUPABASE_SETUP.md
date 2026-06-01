@@ -91,3 +91,4 @@ Commit and push the updated files to GitHub Pages.
 - The form still keeps an email fallback if the database is not configured or the request fails.
 - Since this is a public website, the `anon` key is expected to be public. Security comes from RLS, not from hiding the anon key.
 - You can manage and update inquiries inside the Supabase dashboard after they are submitted.
+- If you want Telegram alerts for new inquiries, use `SUPABASE_TELEGRAM_ALERTS.md` and the Edge Function in `supabase/functions/tutoring-telegram-alert/`.
