@@ -33,8 +33,10 @@ This is the safer setup because:
 From a machine with the Supabase CLI installed and authenticated:
 
 ```bash
-supabase functions deploy tutoring-telegram-alert
+supabase functions deploy --no-verify-jwt tutoring-telegram-alert
 ```
+
+`--no-verify-jwt` is required here because the database-triggered webhook does not send a Supabase JWT. The function still protects itself by requiring the `x-webhook-secret` header.
 
 ## 2. Set the required secrets in Supabase
 
