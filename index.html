@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; frame-ancestors 'self'; upgrade-insecure-requests">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https://*.supabase.co; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; frame-ancestors 'self'; upgrade-insecure-requests">
   <meta name="description" content="Dr. Erdell Maurice — mathematician, educator, researcher, and founder of Tutoring Capital. Explore research, teaching, and private math tutoring in Tallahassee and online.">
   <title>Dr. Erdell Maurice | Home</title>
   <link rel="stylesheet" href="index.css">
@@ -21,6 +21,7 @@
       <li><a href="credentials.html">Talks, Honors & Skills</a></li>
       <li><a href="personal-contact.html">Hobbies</a></li>
       <li><a href="tutoring.html">Tutoring</a></li>
+      <li><a href="tutoring-intake.html">Free Consultation</a></li>
       <li><a href="contact-me.html">Contact Me</a></li>
       <li><a href="agent-team.html">Agent Team</a></li>
     </ul>
@@ -114,6 +115,7 @@
         <div class="project-card glass-card reveal"><div class="project-icon">🏅</div><div class="project-content"><h3 class="project-title">Talks, Honors &amp; Skills</h3><p class="project-description">Presentations, awards, technical strengths, and professional expertise.</p><div class="project-links"><a href="credentials.html" class="project-link">Open Page</a></div></div></div>
         <div class="project-card glass-card reveal reveal-delay-1"><div class="project-icon">✨</div><div class="project-content"><h3 class="project-title">Hobbies</h3><p class="project-description">Personal interests, family grounding, and the things I enjoy outside of work.</p><div class="project-links"><a href="personal-contact.html" class="project-link">Open Page</a></div></div></div>
         <div class="project-card glass-card reveal reveal-delay-2"><div class="project-icon">📘</div><div class="project-content"><h3 class="project-title">Tutoring Capital</h3><p class="project-description">Math tutoring for middle school, high school, and college students in Tallahassee and online.</p><div class="project-links"><a href="tutoring.html" class="project-link">Open Page</a></div></div></div>
+        <div class="project-card glass-card reveal reveal-delay-3"><div class="project-icon">🗓️</div><div class="project-content"><h3 class="project-title">Free Consultation</h3><p class="project-description">Share the student’s course, challenge, and goals through the intake form so I can recommend the best next step.</p><div class="project-links"><a href="tutoring-intake.html" class="project-link">Start Here</a></div></div></div>
         <div class="project-card glass-card reveal reveal-delay-2"><div class="project-icon">📬</div><div class="project-content"><h3 class="project-title">Contact Me</h3><p class="project-description">A dedicated page with the best ways to connect regarding teaching, research, and collaboration.</p><div class="project-links"><a href="contact-me.html" class="project-link">Open Page</a></div></div></div>
       </div>
     </div>
@@ -158,5 +160,7 @@
   </footer>
 
   <script src="script.js"></script>
+  <script src="supabase-config.js"></script>
+  <script src="analytics.js"></script>
 </body>
 </html>
