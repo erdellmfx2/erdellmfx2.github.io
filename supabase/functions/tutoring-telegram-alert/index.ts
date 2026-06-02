@@ -3,11 +3,11 @@ Deno.serve(async (req) => {
     return json({ error: 'Method not allowed' }, 405);
   }
 
-  const expectedSecret = Deno.env.get('SUPABASE_WEBHOOK_SECRET');
+  const expectedSecret = Deno.env.get('WEBHOOK_SECRET');
   const receivedSecret = req.headers.get('x-webhook-secret') ?? '';
 
   if (!expectedSecret) {
-    return json({ error: 'Missing SUPABASE_WEBHOOK_SECRET' }, 500);
+    return json({ error: 'Missing WEBHOOK_SECRET' }, 500);
   }
 
   if (receivedSecret !== expectedSecret) {

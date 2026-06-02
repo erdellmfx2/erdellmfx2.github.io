@@ -45,18 +45,18 @@ Add these secrets:
 
 - `TELEGRAM_BOT_TOKEN`
 - `TELEGRAM_CHAT_ID`
-- `SUPABASE_WEBHOOK_SECRET`
+- `WEBHOOK_SECRET`
 
 Suggested values:
 
-- `TELEGRAM_BOT_TOKEN` = your Telegram bot token
+- `TELEGRAM_BOT_TOKEN` = your bot token
 - `TELEGRAM_CHAT_ID` = the chat ID where you want alerts delivered
-- `SUPABASE_WEBHOOK_SECRET` = a long random string you create just for this webhook
+- `WEBHOOK_SECRET` = a long random string you create just for this webhook
 
 CLI version:
 
 ```bash
-supabase secrets set TELEGRAM_BOT_TOKEN=... TELEGRAM_CHAT_ID=... SUPABASE_WEBHOOK_SECRET=...
+supabase secrets set TELEGRAM_BOT_TOKEN=... TELEGRAM_CHAT_ID=... WEBHOOK_SECRET=...
 ```
 
 ## 3. Create the Database Webhook
@@ -80,7 +80,7 @@ https://YOUR_PROJECT_REF.supabase.co/functions/v1/tutoring-telegram-alert
 5. Add this header:
 
 ```text
-x-webhook-secret: YOUR_SUPABASE_WEBHOOK_SECRET
+x-webhook-secret: YOUR_WEBHOOK_SECRET
 ```
 
 6. Save the webhook
