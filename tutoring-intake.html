@@ -8,6 +8,243 @@
   <meta name="description" content="Request a tutoring consultation with Tutoring Capital. Share your course, goals, and availability for math tutoring in Tallahassee and online.">
   <title>Tutoring Capital | Tutoring Intake</title>
   <link rel="stylesheet" href="index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --tc-bg: #f8fafc;
+      --tc-surface: #ffffff;
+      --tc-surface-alt: #eff6ff;
+      --tc-text: #0f172a;
+      --tc-muted: #475569;
+      --tc-soft: #64748b;
+      --tc-primary: #1d4ed8;
+      --tc-primary-dark: #1e3a8a;
+      --tc-accent: #0f766e;
+      --tc-border: #dbeafe;
+      --tc-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+      --tc-radius: 18px;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(180deg, #f8fbff 0%, #f8fafc 35%, #ffffff 100%);
+      color: var(--tc-text);
+    }
+
+    #tutoring-intake-page {
+      position: relative;
+      overflow: hidden;
+      padding: 4rem 0 5rem;
+      background: transparent;
+    }
+
+    #tutoring-intake-page::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at top left, rgba(59, 130, 246, 0.16), transparent 32%),
+        radial-gradient(circle at bottom right, rgba(15, 118, 110, 0.12), transparent 28%);
+      pointer-events: none;
+    }
+
+    .navbar {
+      background: rgba(255, 255, 255, 0.9);
+      border-bottom: 1px solid rgba(219, 234, 254, 0.9);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.04);
+    }
+
+    .navbar.scrolled {
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: 0 16px 32px rgba(15, 23, 42, 0.08);
+    }
+
+    .nav-logo,
+    .nav-links a {
+      color: var(--tc-text);
+    }
+
+    .hamburger span {
+      background-color: var(--tc-text);
+    }
+
+    .nav-links a {
+      opacity: 0.84;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus {
+      color: var(--tc-primary);
+      opacity: 1;
+    }
+
+    .form-shell {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .section-header {
+      margin-bottom: 0.5rem;
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.45rem 0.85rem;
+      border-radius: 999px;
+      background: #dbeafe;
+      color: var(--tc-primary-dark);
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    .section-title {
+      color: var(--tc-text);
+      max-width: 14ch;
+      margin: 1rem auto 0.75rem;
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+
+    .section-subtitle {
+      max-width: 46rem;
+      margin: 0 auto;
+      color: var(--tc-muted);
+      font-size: 1.08rem;
+      line-height: 1.75;
+    }
+
+    .section-divider {
+      background: linear-gradient(90deg, var(--tc-primary), var(--tc-accent));
+      box-shadow: 0 8px 18px rgba(29, 78, 216, 0.18);
+    }
+
+    .glass-card.form-card {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+      border: 1px solid var(--tc-border);
+      border-radius: 24px;
+      box-shadow: var(--tc-shadow);
+      backdrop-filter: none;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem 1.25rem;
+    }
+
+    .form-field label {
+      color: var(--tc-primary-dark);
+      font-weight: 700;
+      margin-bottom: 0.45rem;
+      display: inline-block;
+    }
+
+    .form-field input,
+    .form-field select,
+    .form-field textarea,
+    #message-preview {
+      width: 100%;
+      border-radius: 14px;
+      border: 1px solid #cbd5e1;
+      background: rgba(255, 255, 255, 0.98);
+      color: var(--tc-text);
+      padding: 0.95rem 1rem;
+      font: inherit;
+      box-shadow: inset 0 1px 2px rgba(15, 23, 42, 0.03);
+      transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .form-field textarea,
+    #message-preview {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .form-field input::placeholder,
+    .form-field textarea::placeholder {
+      color: var(--tc-soft);
+    }
+
+    .form-field input:focus,
+    .form-field select:focus,
+    .form-field textarea:focus,
+    #message-preview:focus {
+      outline: none;
+      border-color: rgba(29, 78, 216, 0.55);
+      box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.14);
+      background: #fff;
+    }
+
+    .helper-text,
+    .status-note {
+      color: var(--tc-muted);
+    }
+
+    .contact-links {
+      gap: 0.85rem;
+      flex-wrap: wrap;
+    }
+
+    .contact-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.95rem 1.35rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      background: #fff;
+      color: var(--tc-primary-dark);
+      border: 1px solid var(--tc-border);
+      box-shadow: 0 10px 24px rgba(37, 99, 235, 0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    button.contact-btn {
+      background: linear-gradient(135deg, var(--tc-primary), var(--tc-primary-dark));
+      color: #fff;
+      border: 0;
+      box-shadow: 0 16px 30px rgba(29, 78, 216, 0.22);
+    }
+
+    .contact-btn:hover,
+    .contact-btn:focus {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 28px rgba(15, 23, 42, 0.12);
+    }
+
+    .status-note {
+      margin-top: 1rem;
+      font-weight: 600;
+    }
+
+    .site-footer {
+      background: transparent;
+      border-top: 1px solid rgba(203, 213, 225, 0.7);
+      color: var(--tc-soft);
+    }
+
+    @media (max-width: 800px) {
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title {
+        max-width: none;
+      }
+    }
+  </style>
 </head>
 <body>
   <nav class="navbar" id="navbar">
