@@ -332,7 +332,7 @@
                     <div class="payment-handle">$Erdellmfx2</div>
                     <div class="payment-actions">
                         <a href="https://cash.app/$Erdellmfx2" class="btn btn-primary">Open Cash App</a>
-                        <button type="button" class="btn btn-secondary" onclick="copyPaymentInfo('$Erdellmfx2', 'Cash App handle copied.')">Copy Cash App</button>
+                        <button type="button" class="btn btn-secondary" data-copy-value="$Erdellmfx2" data-copy-success="Cash App handle copied.">Copy Cash App</button>
                     </div>
                     <p class="helper-text">This page uses a custom button style instead of official Cash App brand assets. On many phones, the link will open the app directly if it is installed.</p>
                 </div>
@@ -348,7 +348,7 @@
                     <div class="payment-handle">erdellmfx2@gmail.com</div>
                     <div class="payment-actions">
                         <a href="https://www.zellepay.com/get-started" class="btn btn-primary">Open Zelle</a>
-                        <button type="button" class="btn btn-secondary" onclick="copyPaymentInfo('erdellmfx2@gmail.com', 'Zelle email copied.')">Copy Zelle Email</button>
+                        <button type="button" class="btn btn-secondary" data-copy-value="erdellmfx2@gmail.com" data-copy-success="Zelle email copied.">Copy Zelle Email</button>
                     </div>
                     <p class="helper-text">This page uses a custom Zelle-style card instead of official Zelle logos. Visitors can open Zelle's get-started page, then paste your email into their banking app or Zelle flow.</p>
                 </div>
@@ -375,22 +375,7 @@
             <p>© 2026 Dr. Erdell Maurice. Payment details for tutoring services in Tallahassee and online.</p>
         </div>
     </footer>
-
-    <script>
-        function copyPaymentInfo(value, successMessage) {
-            if (!navigator.clipboard) {
-                window.prompt('Copy this information:', value);
-                return;
-            }
-            navigator.clipboard.writeText(value)
-                .then(function () {
-                    window.alert(successMessage);
-                })
-                .catch(function () {
-                    window.prompt('Copy this information:', value);
-                });
-        }
-    </script>
+    <script src="payment-info.js"></script>
   <script src="supabase-config.js"></script>
   <script src="analytics.js"></script>
 </body>

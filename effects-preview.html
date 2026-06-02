@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https://*.supabase.co; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; frame-ancestors 'self'; upgrade-insecure-requests">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https://*.supabase.co; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; frame-ancestors 'self'; upgrade-insecure-requests">
   <title>Background Effects Preview</title>
   <link rel="stylesheet" href="index.css">
   <style>
@@ -150,49 +150,7 @@
       </section>
     </div>
   </main>
-
-  <script>
-    (function initPreviewParticles() {
-      const canvas = document.getElementById('previewParticles');
-      if (!canvas) return;
-      const ctx = canvas.getContext('2d');
-      let particles = [];
-      let frame;
-      function resize() {
-        const rect = canvas.getBoundingClientRect();
-        canvas.width = rect.width * window.devicePixelRatio;
-        canvas.height = rect.height * window.devicePixelRatio;
-        ctx.setTransform(1,0,0,1,0,0);
-        ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
-      }
-      function make() {
-        const rect = canvas.getBoundingClientRect();
-        particles = Array.from({length: 34}, () => ({
-          x: Math.random() * rect.width,
-          y: Math.random() * rect.height,
-          vx: (Math.random() - 0.5) * 0.3,
-          vy: (Math.random() - 0.5) * 0.3,
-          r: Math.random() * 2 + 1
-        }));
-      }
-      function draw() {
-        const rect = canvas.getBoundingClientRect();
-        ctx.clearRect(0,0,rect.width,rect.height);
-        particles.forEach(p => {
-          ctx.beginPath();
-          ctx.fillStyle = 'rgba(238,118,36,0.55)';
-          ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-          ctx.fill();
-          p.x += p.vx; p.y += p.vy;
-          if (p.x < 0) p.x = rect.width; if (p.x > rect.width) p.x = 0;
-          if (p.y < 0) p.y = rect.height; if (p.y > rect.height) p.y = 0;
-        });
-        frame = requestAnimationFrame(draw);
-      }
-      resize(); make(); draw();
-      window.addEventListener('resize', () => { cancelAnimationFrame(frame); resize(); make(); draw(); });
-    })();
-  </script>
+  <script src="effects-preview.js"></script>
   <script src="supabase-config.js"></script>
   <script src="analytics.js"></script>
 </body>

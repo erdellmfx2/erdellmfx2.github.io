@@ -46,3 +46,47 @@ for all
 to authenticated
 using (true)
 with check (true);
+
+
+create table if not exists public.site_pageviews (
+  id uuid primary key default gen_random_uuid(),
+  created_at timestamptz not null default timezone('utc', now()),
+  page_path text not null check (char_length(page_path) between 1 and 2048),
+  page_title text check (page_title is null or char_length(page_title) <= 512),
+  page_url text not null check (char_length(page_url) between 1 and 4096),
+  referrer_host text check (referrer_host is null or char_length(referrer_host) <= 255),
+  client_id text check (client_id is null or char_length(client_id) <= 255),
+  utm_source text check (utm_source is null or char_length(utm_source) <= 255),
+  utm_medium text check (utm_medium is null or char_length(utm_medium) <= 255),
+  utm_campaign text check (utm_campaign is null or char_length(utm_campaign) <= 255)
+);
+
+alter table public.site_pageviews enable row level security;
+
+revoke all on public.site_pageviews from anon;
+revoke all on public.site_pageviews from authenticated;
+
+grant insert on public.site_pageviews to anon;
+grant select, insert, update, delete on public.site_pageviews to authenticated;
+
+drop policy if exists "public can insert site pageviews" on public.site_pageviews;
+create policy "public can insert site pageviews"
+on public.site_pageviews
+for insert
+to public
+with check (true);
+
+drop policy if exists "service role can read site pageviews" on public.site_pageviews;
+create policy "service role can read site pageviews"
+on public.site_pageviews
+for select
+to service_role
+using (true);
+
+drop policy if exists "authenticated can manage site pageviews" on public.site_pageviews;
+create policy "authenticated can manage site pageviews"
+on public.site_pageviews
+for all
+to authenticated
+using (true)
+with check (true);
