@@ -41,7 +41,7 @@
       <p>The Hermes_Business YouTube Connector is an owner-operated desktop integration used by Dr. Erdell Maurice to manage original educational and mathematics-storytelling content for <em>The Formula of Becoming</em> on the authorized Erdell Maurice YouTube channel.</p>
 
       <div class="notice">
-        <p><strong>Plain-language disclosure:</strong> When the channel owner approves Google authorization, this connector can read information about the owner's YouTube channel and videos and can use the approved upload permission to set custom thumbnails or, when separately and explicitly enabled, upload owner-approved videos. It does not publish merely because an account is connected.</p>
+        <p><strong>Plain-language disclosure:</strong> When the channel owner approves Google authorization, this connector can read and manage the owner's YouTube channel and owned content and can use the approved upload permission to set custom thumbnails or, when separately and explicitly enabled, upload owner-approved videos. It does not publish, modify, or delete anything merely because an account is connected.</p>
       </div>
 
       <h2>What the connector does</h2>
@@ -56,6 +56,7 @@
       <ul>
         <li><strong>YouTube read-only:</strong> used to identify the authorized channel and inspect its channel and video metadata.</li>
         <li><strong>YouTube upload:</strong> used to set custom video thumbnails and, if the owner later enables the feature, upload owner-approved videos.</li>
+        <li><strong>YouTube account management:</strong> permits owner-directed management of owned videos, playlists, subscriptions, channel sections, and live-video features. Destructive connector commands are disabled by default and require temporary local enablement plus exact confirmation.</li>
       </ul>
 
       <h2>What the connector does not do</h2>
@@ -64,6 +65,7 @@
         <li>It does not access the owner's email, contacts, Drive files, location, general Google activity, or YouTube watch history.</li>
         <li>It does not sell Google user data or use it for advertising, credit, surveillance, or unrelated profiling.</li>
         <li>It does not upload or publish content without a direct owner instruction or an owner-approved scheduled workflow.</li>
+        <li>It does not delete a video or playlist unless the owner temporarily enables the matching private safety switch and explicitly confirms the exact resource.</li>
       </ul>
 
       <h2>Security and user control</h2>
