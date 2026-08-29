@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https:; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; frame-ancestors 'self'; upgrade-insecure-requests">
+  <title>Hermes_Business YouTube Connector | The Formula of Becoming</title>
+  <meta name="description" content="Public application homepage for the Hermes_Business YouTube publishing connector used to manage The Formula of Becoming on Dr. Erdell Maurice's YouTube channel.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="stylesheet" href="index.css">
+  <style>
+    .legal-page { padding: 8rem 1.25rem 4rem; min-height: 100vh; }
+    .legal-card { max-width: 960px; margin: 0 auto; padding: clamp(1.5rem, 4vw, 3rem); }
+    .legal-card h1 { margin-bottom: .75rem; }
+    .legal-card h2 { margin: 2rem 0 .75rem; font-size: 1.35rem; }
+    .legal-card p, .legal-card li { line-height: 1.7; color: var(--text-secondary, #a0a0b8); }
+    .legal-card ul { padding-left: 1.3rem; }
+    .legal-meta { margin-bottom: 2rem; color: var(--text-secondary, #a0a0b8); }
+    .legal-nav { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2.5rem; }
+    .notice { border-left: 4px solid var(--accent-primary, #ee7624); padding: 1rem 1.25rem; margin: 1.5rem 0; background: rgba(238, 118, 36, .08); border-radius: 0 .75rem .75rem 0; }
+  </style>
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="nav-logo">Dr. Maurice</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="youtube-privacy.html">Privacy</a></li>
+      <li><a href="youtube-terms.html">Terms</a></li>
+      <li><a href="contact-me.html">Contact Me</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </nav>
+  <main class="legal-page">
+    <article class="glass-card legal-card">
+      <span class="section-label">Hermes_Business</span>
+      <h1>YouTube Publishing Connector</h1>
+      <p class="legal-meta"><strong>Application:</strong> The Formula of Becoming Publisher<br><strong>Operator:</strong> Dr. Erdell Maurice<br><strong>Last updated:</strong> August 28, 2026</p>
+      <p>The Hermes_Business YouTube Connector is an owner-operated desktop integration used by Dr. Erdell Maurice to manage original educational and mathematics-storytelling content for <em>The Formula of Becoming</em> on the authorized Erdell Maurice YouTube channel.</p>
+
+      <div class="notice">
+        <p><strong>Plain-language disclosure:</strong> When the channel owner approves Google authorization, this connector can read information about the owner's YouTube channel and videos and can use the approved upload permission to set custom thumbnails or, when separately and explicitly enabled, upload owner-approved videos. It does not publish merely because an account is connected.</p>
+      </div>
+
+      <h2>What the connector does</h2>
+      <ul>
+        <li>identifies the YouTube channel selected by the authenticated owner;</li>
+        <li>reads owned-video titles, IDs, visibility, processing status, scheduled publication dates, and available engagement totals;</li>
+        <li>sets an approved custom thumbnail after checking the exact video and saving a recovery copy of the prior thumbnail; and</li>
+        <li>may later upload original, owner-approved videos only through an explicit protected publishing command.</li>
+      </ul>
+
+      <h2>Google permissions requested</h2>
+      <ul>
+        <li><strong>YouTube read-only:</strong> used to identify the authorized channel and inspect its channel and video metadata.</li>
+        <li><strong>YouTube upload:</strong> used to set custom video thumbnails and, if the owner later enables the feature, upload owner-approved videos.</li>
+      </ul>
+
+      <h2>What the connector does not do</h2>
+      <ul>
+        <li>It does not request or store the owner's Google password.</li>
+        <li>It does not access the owner's email, contacts, Drive files, location, general Google activity, or YouTube watch history.</li>
+        <li>It does not sell Google user data or use it for advertising, credit, surveillance, or unrelated profiling.</li>
+        <li>It does not upload or publish content without a direct owner instruction or an owner-approved scheduled workflow.</li>
+      </ul>
+
+      <h2>Security and user control</h2>
+      <p>OAuth credentials and tokens are kept in access-restricted storage controlled by the operator and excluded from the public website repository. The channel owner can revoke access at any time through <a href="https://security.google.com/settings/security/permissions" target="_blank" rel="noopener noreferrer">Google Account third-party access settings</a> or request deletion by email.</p>
+
+      <h2>Policies and contact</h2>
+      <p>Use of this connector is governed by the dedicated <a href="youtube-privacy.html">YouTube Connector Privacy Policy</a> and <a href="youtube-terms.html">YouTube Connector Terms of Service</a>. Questions, revocation assistance, or deletion requests may be sent to <a href="mailto:erdellmfx2@gmail.com">erdellmfx2@gmail.com</a>.</p>
+
+      <p>This application uses YouTube API Services. YouTube and Google are independent third parties, and this connector is not endorsed by or affiliated with YouTube or Google.</p>
+
+      <div class="legal-nav">
+        <a class="contact-btn" href="youtube-privacy.html">Privacy Policy</a>
+        <a class="contact-btn" href="youtube-terms.html">Terms of Service</a>
+        <a class="contact-btn" href="index.html">Main Website</a>
+      </div>
+    </article>
+  </main>
+  <footer class="site-footer"><div class="container footer-content"><p>© 2026 Dr. Erdell Maurice</p></div></footer>
+  <script src="script.js"></script>
+</body>
+</html>
