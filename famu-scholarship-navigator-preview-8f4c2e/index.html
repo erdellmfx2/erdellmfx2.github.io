@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="theme-color" content="#074f3a" />
+    <title>FAMU Mathematics Scholarship Navigator · Committee Preview</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <style>
+      :root {
+        --ink: #173128;
+        --green: #07533d;
+        --green-2: #0a6a4d;
+        --orange: #df6b2e;
+        --cream: #f7f3e9;
+        --paper: #fffdf8;
+        --line: rgba(23, 49, 40, 0.16);
+        --muted: #5b6b64;
+      }
+
+      * { box-sizing: border-box; }
+
+      html { scroll-behavior: smooth; }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        background: var(--cream);
+        font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        line-height: 1.55;
+      }
+
+      a { color: inherit; }
+
+      .shell {
+        width: min(1180px, calc(100% - 40px));
+        margin: 0 auto;
+      }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        border-bottom: 1px solid var(--line);
+        background: rgba(255, 253, 248, 0.96);
+        backdrop-filter: blur(14px);
+      }
+
+      .header-inner {
+        min-height: 78px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 13px;
+        font-weight: 760;
+        letter-spacing: -0.02em;
+      }
+
+      .mark {
+        width: 42px;
+        height: 42px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        color: white;
+        background: var(--green);
+        font-size: 13px;
+        letter-spacing: 0.04em;
+      }
+
+      .preview-pill {
+        padding: 7px 12px;
+        border: 1px solid rgba(223, 107, 46, 0.38);
+        border-radius: 999px;
+        color: #a84a1d;
+        background: #fff7f1;
+        font-size: 12px;
+        font-weight: 760;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+      }
+
+      .hero {
+        padding: 76px 0 56px;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 54px;
+        align-items: center;
+      }
+
+      .eyebrow {
+        margin: 0 0 18px;
+        color: var(--orange);
+        font-size: 12px;
+        font-weight: 780;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+      }
+
+      h1, h2, h3, p { margin-top: 0; }
+
+      h1 {
+        max-width: 760px;
+        margin-bottom: 22px;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(46px, 6.2vw, 78px);
+        line-height: 0.99;
+        letter-spacing: -0.045em;
+      }
+
+      .lede {
+        max-width: 680px;
+        margin-bottom: 30px;
+        color: var(--muted);
+        font-size: 19px;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        padding: 0 19px;
+        border: 1px solid var(--green);
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 720;
+      }
+
+      .button-primary { color: white; background: var(--green); }
+      .button-secondary { color: var(--green); background: transparent; }
+
+      .hero-note {
+        padding: 30px;
+        border-radius: 16px;
+        color: white;
+        background: var(--green);
+        box-shadow: 0 20px 50px rgba(7, 83, 61, 0.14);
+      }
+
+      .hero-note .label {
+        display: block;
+        margin-bottom: 16px;
+        color: #f2af86;
+        font-size: 12px;
+        font-weight: 780;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .hero-note h2 {
+        margin-bottom: 13px;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 30px;
+        line-height: 1.1;
+      }
+
+      .hero-note p { margin-bottom: 0; color: rgba(255,255,255,0.83); }
+
+      .video-section {
+        padding: 26px 0 74px;
+      }
+
+      .section-heading {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 30px;
+        margin-bottom: 22px;
+      }
+
+      .section-heading h2 {
+        margin-bottom: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(32px, 4vw, 48px);
+        letter-spacing: -0.035em;
+      }
+
+      .section-heading p {
+        max-width: 530px;
+        margin-bottom: 0;
+        color: var(--muted);
+      }
+
+      .video-frame {
+        padding: 13px;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: var(--paper);
+        box-shadow: 0 18px 55px rgba(23, 49, 40, 0.09);
+      }
+
+      video {
+        display: block;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        border-radius: 10px;
+        background: #062f23;
+      }
+
+      .disclosure {
+        margin: 14px 4px 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .path-section {
+        padding: 72px 0;
+        border-top: 1px solid var(--line);
+        background: var(--paper);
+      }
+
+      .path-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+        margin-top: 30px;
+      }
+
+      .step {
+        min-height: 230px;
+        padding: 24px;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: white;
+      }
+
+      .step-number {
+        width: 36px;
+        height: 36px;
+        display: grid;
+        place-items: center;
+        margin-bottom: 30px;
+        border-radius: 50%;
+        color: #a94c20;
+        background: #fff1e7;
+        font-weight: 780;
+      }
+
+      .step h3 { margin-bottom: 10px; font-size: 18px; }
+      .step p { margin-bottom: 0; color: var(--muted); font-size: 15px; }
+
+      .toolkit {
+        padding: 76px 0;
+      }
+
+      .toolkit-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+        margin-top: 28px;
+      }
+
+      .tool {
+        padding: 26px;
+        border-top: 3px solid var(--green);
+        background: rgba(255,255,255,0.62);
+      }
+
+      .tool h3 { margin-bottom: 8px; }
+      .tool p { margin-bottom: 0; color: var(--muted); }
+
+      .safeguard {
+        margin-top: 28px;
+        padding: 26px 28px;
+        border-left: 5px solid var(--orange);
+        color: white;
+        background: var(--green);
+      }
+
+      .safeguard strong { display: block; margin-bottom: 7px; }
+      .safeguard p { margin: 0; color: rgba(255,255,255,0.83); }
+
+      footer {
+        padding: 32px 0 44px;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      footer strong { color: var(--ink); }
+
+      @media (max-width: 860px) {
+        .hero-grid, .toolkit-grid { grid-template-columns: 1fr; }
+        .path-grid { grid-template-columns: 1fr 1fr; }
+        .section-heading { display: block; }
+        .section-heading p { margin-top: 12px; }
+      }
+
+      @media (max-width: 560px) {
+        .shell { width: min(100% - 24px, 1180px); }
+        .header-inner { min-height: 68px; }
+        .brand { font-size: 14px; }
+        .mark { width: 36px; height: 36px; }
+        .preview-pill { display: none; }
+        .hero { padding-top: 52px; }
+        .path-grid { grid-template-columns: 1fr; }
+        .step { min-height: 0; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="shell header-inner">
+        <div class="brand"><span class="mark">FM</span><span>FAMU Mathematics Scholarship Navigator</span></div>
+        <span class="preview-pill">Committee preview</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="shell hero-grid">
+          <div>
+            <p class="eyebrow">Student preparation workspace</p>
+            <h1>Prepare a stronger scholarship application.</h1>
+            <p class="lede">The Scholarship Navigator guides FAMU mathematics students from the first planning step through essays, faculty recommendations, review, and a complete application packet.</p>
+            <div class="actions">
+              <a class="button button-primary" href="#walkthrough">Watch the 90-second walkthrough</a>
+              <a class="button button-secondary" href="https://famu.academicworks.com/opportunities" target="_blank" rel="noopener noreferrer">Open the official FAMU portal ↗</a>
+            </div>
+          </div>
+          <aside class="hero-note">
+            <span class="label">Official handoff</span>
+            <h2>Preparation here. Submission through FAMU AcademicWorks.</h2>
+            <p>The Navigator helps students organize and strengthen their materials. It never submits an application, contacts a sponsor, or guarantees an award.</p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="video-section" id="walkthrough">
+        <div class="shell">
+          <div class="section-heading">
+            <h2>How to use the Navigator</h2>
+            <p>Follow the complete student journey, from the Portal Hub to the final export and official submission.</p>
+          </div>
+          <div class="video-frame">
+            <video controls preload="metadata" poster="scholarship-navigator-walkthrough-poster.png">
+              <source src="scholarship-navigator-walkthrough.mp4" type="video/mp4" />
+              Your browser does not support embedded video.
+            </video>
+            <p class="disclosure">This walkthrough uses an AI-generated narrator and an original instrumental score.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="path-section">
+        <div class="shell">
+          <p class="eyebrow">The four-step path</p>
+          <div class="section-heading">
+            <h2>From preparation to official submission</h2>
+            <p>Students always remain responsible for reviewing their work, following sponsor requirements, and meeting every deadline.</p>
+          </div>
+          <div class="path-grid">
+            <article class="step"><span class="step-number">1</span><h3>File the FAFSA</h3><p>Complete the 2026–2027 FAFSA and include FAMU school code 001480 when required.</p></article>
+            <article class="step"><span class="step-number">2</span><h3>Enter AcademicWorks</h3><p>Use the official FAMU scholarship portal and sign in with the student’s university credentials.</p></article>
+            <article class="step"><span class="step-number">3</span><h3>Prepare four essays</h3><p>Develop the personal, financial need, leadership and service, and mathematics research responses.</p></article>
+            <article class="step"><span class="step-number">4</span><h3>Match and apply</h3><p>Review the complete packet, follow sponsor instructions, and submit through the official portal.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="toolkit">
+        <div class="shell">
+          <p class="eyebrow">Inside the student toolkit</p>
+          <div class="section-heading">
+            <h2>One guided preparation workflow</h2>
+            <p>Each tool helps the student produce clearer, more complete materials without replacing student judgment or authorship.</p>
+          </div>
+          <div class="toolkit-grid">
+            <article class="tool"><h3>Essay Studio</h3><p>Guided prompts for the four core essays, grounded in the student’s own experiences and evidence.</p></article>
+            <article class="tool"><h3>Faculty Recommendation Builder</h3><p>A professional request that gives faculty the course connection, accomplishments, and deadline.</p></article>
+            <article class="tool"><h3>Rubric and Review</h3><p>A structured readiness check for clarity, evidence, alignment, mechanics, and other evaluation areas.</p></article>
+            <article class="tool"><h3>Application Export</h3><p>A complete packet students can review before transferring materials to FAMU AcademicWorks.</p></article>
+          </div>
+          <div class="safeguard"><strong>Student-control safeguard</strong><p>The Scholarship Navigator prepares and organizes. The student completes every official submission, and sponsor instructions and deadlines always control.</p></div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="shell"><strong>Florida A&amp;M University · Department of Mathematics</strong><br />Committee preview of the Mathematics Scholarship Navigator student-preparation workflow.</div>
+    </footer>
+  </body>
+</html>
